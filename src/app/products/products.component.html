@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-lg-4" *ngFor="let item of productHome">
+        <div class="card-deck mt-3">
+            <div class="card">
+                <img class="card-img-top" src="{{item.ImageUrl}}" width="100%" height="250px">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{item.Name}}</h5>
+                    <p class="card-text">{{item.Price | currency: 'VND'}}</p>
+                    <button type="button" class="btn btn-primary" routerLink="cart/{{item.Id}}">Xem sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
