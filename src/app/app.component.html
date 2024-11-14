@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-md" style="background-color: blanchedalmond;" >
+  <div class="container-fluid">
+    <h3 style="color: brown;" class="navbar-brand" href="#">Babies with love</h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/List">Product List</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/cart/1">My cart</a>
+          </li>
+          <ng-container *ngIf="!isAuthenticated()">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/Login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+          </ng-container>
+
+          <ng-container *ngIf="isAuthenticated()">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="logout()" routerLink="/Logout">Logout</a>
+            </li>
+          </ng-container>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+      <img src="/assets/IMG/banner.jpg" alt="">
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-md-5">
+      <h4 class="text-danger text-center" style="background-color: blanchedalmond;">DANH MỤC SẢN PHẨM</h4>
+      <ul class="Menu" style="background-color: bisque;">
+        <li>
+          <a href="" style="text-decoration: none;">Thú len</a>
+          <ul style="list-style:none;">
+            <li>Thỏ len</li>
+            <li>Thỏ len 1</li>
+            <li>Cừu len</li>
+            <li>Teddy len</li>
+          </ul>
+        </li>
+        <li>
+          <a href="" style="text-decoration: none;">Thú bông</a>
+          <ul style="list-style:none;">
+            <li>Chó bông</li>
+            <li>Ếch bông 1</li>
+            <li>Panda bông</li>
+            <li>Thỏ bông</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-8 col-md-7">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container-fluid" style="background-color: blanchedalmond;">
+    <p class="text-center">Designed by <span style="color: brown;">Van Anh</span></p>
+  </div>
+</footer>
