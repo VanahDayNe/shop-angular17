@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 node_modules/
 .vscode/
 .angular/
+=======
+node_modules/
+.vscode/
+.angular/
+>>>>>>> 2a9ea447232359c06d75f3a7ee335f73aba56eba
